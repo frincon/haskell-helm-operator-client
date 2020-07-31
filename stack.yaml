@@ -1,0 +1,9 @@
+resolver: lts-14.27
+extra-deps:
+- katip-0.8.3.0
+- oidc-client-0.4.0.1
+- github: kubernetes-client/haskell
+  commit: 779d6192d45752dcd5f7c137b9a839e031104931
+  subdirs: [ kubernetes, kubernetes-client ]
+packages:
+- '.'
