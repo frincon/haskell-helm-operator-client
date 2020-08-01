@@ -71,9 +71,9 @@ import qualified Prelude as P
 -- ** V1HelmRelease
 -- | V1HelmRelease
 data V1HelmRelease = V1HelmRelease
-  { v1HelmReleaseApiVersion :: !(Maybe Text) -- ^ "apiVersion" - APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
-  , v1HelmReleaseKind :: !(Maybe Text) -- ^ "kind" - Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
-  , v1HelmReleaseMetadata :: !(Maybe A.Value) -- ^ "metadata"
+  { v1HelmReleaseApiVersion :: !(Maybe Text) -- ^ "apiVersion" - APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
+  , v1HelmReleaseKind :: !(Maybe Text) -- ^ "kind" - Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
+  , v1HelmReleaseMetadata :: !(Maybe V1ObjectMeta) -- ^ "metadata"
   , v1HelmReleaseSpec :: !(Maybe V1HelmReleaseSpec) -- ^ "spec"
   , v1HelmReleaseStatus :: !(Maybe V1HelmReleaseStatus) -- ^ "status"
   } deriving (P.Show, P.Eq, P.Typeable)

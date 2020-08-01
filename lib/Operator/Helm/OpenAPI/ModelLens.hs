@@ -49,7 +49,7 @@ v1HelmReleaseKindL f V1HelmRelease{..} = (\v1HelmReleaseKind -> V1HelmRelease { 
 {-# INLINE v1HelmReleaseKindL #-}
 
 -- | 'v1HelmReleaseMetadata' Lens
-v1HelmReleaseMetadataL :: Lens_' V1HelmRelease (Maybe A.Value)
+v1HelmReleaseMetadataL :: Lens_' V1HelmRelease (Maybe V1ObjectMeta)
 v1HelmReleaseMetadataL f V1HelmRelease{..} = (\v1HelmReleaseMetadata -> V1HelmRelease { v1HelmReleaseMetadata, ..} ) <$> f v1HelmReleaseMetadata
 {-# INLINE v1HelmReleaseMetadataL #-}
 

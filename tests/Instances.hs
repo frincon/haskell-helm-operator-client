@@ -112,7 +112,7 @@ genV1HelmRelease n =
   V1HelmRelease
     <$> arbitraryReducedMaybe n -- v1HelmReleaseApiVersion :: Maybe Text
     <*> arbitraryReducedMaybe n -- v1HelmReleaseKind :: Maybe Text
-    <*> arbitraryReducedMaybeValue n -- v1HelmReleaseMetadata :: Maybe A.Value
+    <*> arbitraryReducedMaybe n -- v1HelmReleaseMetadata :: Maybe V1ObjectMeta
     <*> arbitraryReducedMaybe n -- v1HelmReleaseSpec :: Maybe V1HelmReleaseSpec
     <*> arbitraryReducedMaybe n -- v1HelmReleaseStatus :: Maybe V1HelmReleaseStatus
   
