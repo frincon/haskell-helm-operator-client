@@ -152,7 +152,7 @@ paths:
           '*/*':
             schema:
               $ref: '#/components/schemas/v1.DeleteOptions'
-        required: true
+        required: false
       responses:
         200:
           content:

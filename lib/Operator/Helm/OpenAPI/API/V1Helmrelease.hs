@@ -98,15 +98,13 @@ instance Produces CreateNamespacedHelmRelease MimeJSON
 -- Deletes the specified namespace scoped HelmRelease
 -- 
 deleteNamespacedHelmRelease 
-  :: (Consumes DeleteNamespacedHelmRelease contentType, MimeRender contentType V1DeleteOptions)
+  :: (Consumes DeleteNamespacedHelmRelease contentType)
   => ContentType contentType -- ^ request content-type ('MimeType')
-  -> V1DeleteOptions -- ^ "v1DeleteOptions"
   -> Namespace -- ^ "namespace" -  The custom resource's namespace
   -> Name -- ^ "name" -  the custom object's name
   -> KubernetesRequest DeleteNamespacedHelmRelease contentType V1Status MimeJSON
-deleteNamespacedHelmRelease _ v1DeleteOptions (Namespace namespace) (Name name) =
+deleteNamespacedHelmRelease _ (Namespace namespace) (Name name) =
   _mkRequest "DELETE" ["/apis/helm.fluxcd.io/v1/namespaces/",toPath namespace,"/helmreleases/",toPath name]
-    `setBodyParam` v1DeleteOptions
 
 data DeleteNamespacedHelmRelease 
 instance HasBodyParam DeleteNamespacedHelmRelease V1DeleteOptions 
